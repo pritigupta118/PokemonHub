@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PkemonHub",
+  title: "PokemonHub",
   description: "explore the pokemon universe!",
 };
 

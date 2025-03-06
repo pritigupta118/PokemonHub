@@ -1,7 +1,7 @@
 import DetailedPokemonCard from '@/components/DetailedPokemonCard'
 import { fetchPokemonByName } from '@/lib/api'
 import { notFound } from 'next/navigation'
-import React, { JSX } from 'react'
+import React from 'react'
 
 interface Props {
   params: {
@@ -9,7 +9,7 @@ interface Props {
   }
 }
 
-const Page =async ({params}: Props): Promise<JSX.Element> => {
+const page =async ({params}: Props) => {
    const {id} = params
 
    const pokemon = await fetchPokemonByName(id)
@@ -21,4 +21,4 @@ const Page =async ({params}: Props): Promise<JSX.Element> => {
    return <DetailedPokemonCard pokemon={pokemon}/>
 }
 
-export default Page
+export default page

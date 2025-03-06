@@ -5,10 +5,9 @@ import Link from "next/link"
 const PokemonCard = ({ pokemon }: { pokemon: PokemonDetail }) => {
 
 
-  // Get the primary type of the pokemon
   const primaryType = pokemon.types[0]?.type.name || "normal"
 
-  // Map of type to gradient colors (dark theme)
+  
   const typeGradients: Record<string, string> = {
     normal: "from-neutral-800 to-neutral-700",
     fire: "from-orange-900 to-red-800",
@@ -30,7 +29,7 @@ const PokemonCard = ({ pokemon }: { pokemon: PokemonDetail }) => {
     fairy: "from-rose-900 to-pink-800",
   }
 
-  // Map of type to accent color for text and borders
+
   const typeAccents: Record<string, string> = {
     normal: "text-neutral-300 border-neutral-600",
     fire: "text-orange-400 border-orange-700",
