@@ -3,8 +3,10 @@ import { fetchPokemonById } from "@/lib/api"
 
 import { notFound } from "next/navigation"
 
-export default async function PokemonPage({ params }: { params: { id: string } }) {
-  const pokemon = await fetchPokemonById(Number.parseInt(params.id))
+type Params = Promise<{ id: string }>
+export default async function PokemonPage({ params }: { params: Params }) {
+  const { id } = await params
+  const pokemon = await fetchPokemonById(Number(id))
 
   if (!pokemon) {
     notFound()
