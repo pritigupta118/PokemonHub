@@ -9,7 +9,7 @@ interface Props {
   }
 }
 
-const page =async ({params}: Props) => {
+const page =async ({params}: Props): Promise<any> => {
    const {id} = params
 
    const pokemon = await fetchPokemonByName(id)
