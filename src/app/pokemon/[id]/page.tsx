@@ -4,13 +4,15 @@ import { fetchPokemonById } from '@/lib/api'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
-interface PageProps {
-  params: {
-    id: string
-  }
+export interface SearchParams {
+  id: string
 }
 
-const Page =async ({ params }: PageProps) => {
+const Page =async ({
+  params,
+}: {
+  params: SearchParams
+}) => {
   const pokemon = await fetchPokemonById(Number.parseInt(params.id))
 
    if(!pokemon){
