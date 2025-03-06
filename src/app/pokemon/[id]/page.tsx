@@ -1,12 +1,13 @@
 import DetailedPokemonCard from '@/components/DetailedPokemonCard'
-import { fetchPokemonByName } from '@/lib/api'
+import { fetchPokemonById } from '@/lib/api'
+
 import { notFound } from 'next/navigation'
 import React from 'react'
 
 
 
 const page =async ({ params }: { params: { id: string } }) => {
-  const pokemon = await fetchPokemonByName(params.id)
+  const pokemon = await fetchPokemonById(Number.parseInt(params.id))
 
    if(!pokemon){
     notFound()

@@ -28,14 +28,15 @@ export async function fetchPokemonDetail(url: string): Promise<PokemonDetail> {
 }
 
 //Fetch a pokemon by its name
-export async function fetchPokemonByName(name: string):Promise<PokemonDetail | null> {
- try {
-  const res = await fetch(`${BASE_URL}/pokemon/${name}`)
-  const data = await res.json()
-  console.log("pokemon data: ", data)
-  return data
- } catch (error) {
-  console.error(`Error fetching pokemon with id ${name}:`, error)
-  return null
- }
+export async function fetchPokemonById(id: number): Promise<PokemonDetail | null> {
+  try {
+    const res = await fetch(`${BASE_URL}/pokemon/${id}`)
+    if (!res.ok) {
+      throw new Error(`Pokemon with id ${id} not found`)
+    }
+    return await res.json()
+  } catch (error) {
+    console.error(`Error fetching pokemon with id ${id}:`, error)
+    return null
+  }
 }

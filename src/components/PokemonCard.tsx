@@ -52,7 +52,7 @@ const PokemonCard = ({ pokemon }: { pokemon: PokemonDetail }) => {
   }
 
   return (
-    <Link href={`/pokemon/${pokemon.name}`} className="block transform transition-all duration-300 hover:scale-105">
+    <Link href={`/pokemon/${pokemon.id}`} className="block transform transition-all duration-300 hover:scale-105">
       <div
         className={`rounded-xl pt-4 overflow-hidden bg-gradient-to-br ${typeGradients[primaryType] || "from-gray-800 to-gray-700"} 
         shadow-lg border border-opacity-30 ${typeAccents[primaryType].split(" ")[1] || "border-gray-700"}`}
