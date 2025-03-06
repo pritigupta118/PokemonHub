@@ -1,4 +1,4 @@
-# Pokemon Explorer
+# PokemonHub
 
 Pokemon Explorer is a React-based web application that allows users to search, explore, and learn about various Pokemon. The application is built using Next.js, TypeScript, Tailwind CSS, and Framer Motion to provide a smooth and interactive user experience.
 
