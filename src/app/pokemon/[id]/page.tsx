@@ -9,7 +9,7 @@ interface Props {
   }
 }
 
-const page =async ({params}: Props): Promise<JSX.Element> => {
+const Page =async ({params}: Props): Promise<JSX.Element> => {
    const {id} = params
 
    const pokemon = await fetchPokemonByName(id)
@@ -21,4 +21,4 @@ const page =async ({params}: Props): Promise<JSX.Element> => {
    return <DetailedPokemonCard pokemon={pokemon}/>
 }
 
-export default page
+export default Page
