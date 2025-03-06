@@ -3,16 +3,10 @@ import { fetchPokemonByName } from '@/lib/api'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
-interface Props {
-  params: {
-    id: string
-  }
-}
 
-const page =async ({params}: Props) => {
-   const {id} = params
 
-   const pokemon = await fetchPokemonByName(id)
+const page =async ({ params }: { params: { id: string } }) => {
+  const pokemon = await fetchPokemonByName(params.id)
 
    if(!pokemon){
     notFound()
