@@ -1,8 +1,7 @@
 import DetailedPokemonCard from '@/components/DetailedPokemonCard'
 import { fetchPokemonByName } from '@/lib/api'
-import { PokemonDetail } from '@/lib/types'
 import { notFound } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 interface Props {
   params: {
